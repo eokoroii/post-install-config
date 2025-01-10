@@ -168,6 +168,3 @@
   every detail I configured helps streamline support workflows and maintain a secure, 
   efficient help desk system. 
 </p>
-<p>
-  If you have questions or suggestions about this lab process, feel free to reach out or open an issue!
-</p>
