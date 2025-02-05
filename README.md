@@ -1,160 +1,174 @@
-<p align="center">
-  <!-- Replace this with a banner or keep the osTicket logo -->
-  <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket Logo" width="200"/>
-</p>
-
-<h1>osTicket Post-Install Configuration Lab</h1>
+<h1>osTicket Lab 2: Roles, Departments, Teams & Help Topics</h1>
 
 <h2>Project Summary</h2>
 <p>
-   In this lab, I walked through adjusting global settings, 
-  setting up email piping, creating departments and teams, and ensuring the security 
-  configuration was suitable for a production-like environment.
-</p>
-<p>
-  My goal was to demonstrate not only how to get osTicket running, 
-  but also how to tailor it to fit a typical organization’s help desk workflow.
+  With osTicket installed, the next step is configuring <strong>Roles</strong>, 
+  <strong>Departments</strong>, <strong>Teams</strong>, <strong>SLAs</strong>, 
+  and <strong>Help Topics</strong>. These settings define how agents interact 
+  with tickets, which departments handle certain issues, and how tickets are categorized 
+  and prioritized.
 </p>
 
 <ul>
-  <li>
-    <strong>Technologies &amp; Services Involved:</strong>
+  <li><strong>Focus Areas:</strong>
     <ul>
-      <li>osTicket Admin Panel (Staff Control Panel)</li>
-      <li>MySQL Database</li>
-      <li>SMTP / IMAP / POP Email Services</li>
-      <li>PHP (ini / extension configs if needed)</li>
+      <li>Agent Roles &amp; Permissions</li>
+      <li>Department creation (top-level vs. nested)</li>
+      <li>Team creation (cross-department collaboration)</li>
+      <li>SLA Plans (Sev-A, Sev-B, Sev-C)</li>
+      <li>Help Topics (e.g., Business Critical Outage, Equipment Request)</li>
     </ul>
   </li>
-  <li>
-    <strong>Key Objectives:</strong>
-    <ul>
-      <li>Adjust and personalize core system settings</li>
-      <li>Configure email templates, notifications, and ticket intake</li>
-      <li>Set up departments, teams, and user roles for effective ticket routing</li>
-      <li>Establish advanced features like SLAs (Service Level Agreements)</li>
-    </ul>
+  <li><strong>Outcome:</strong> 
+    A well-structured osTicket instance that routes tickets to the right people 
+    and enforces relevant service-level agreements.
   </li>
 </ul>
 
 <hr />
 
-<h2>Steps &amp; Screenshots</h2>
+<h2>Steps & Screenshots</h2>
 <ol>
   <li>
-    <strong>Accessing the Admin Panel</strong><br />
-    To kick things off, I logged into the osTicket <em>Staff Control Panel (scp)</em> at 
-    <code>http://&lt;my_server&gt;/osticket/scp</code>. 
-    From the dashboard, I immediately headed to <em>Admin &gt; Settings</em> to review and fine-tune 
-    the global preferences, such as help desk name, default email address, and system URL. 
-    Making these changes gave the help desk a more personalized identity.
+    <strong>Admin vs. Agent Panel</strong><br />
+    After logging in with admin credentials, I briefly compared the <em>Admin Panel</em> 
+    (system-wide settings) vs. the <em>Agent Panel</em> (daily ticket operations).
     <br /><br />
-    <img src="(SCREENSHOT #1)" alt="Admin Panel Overview" width="600" />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Admin+Panel+Overview" alt="Admin Panel overview" width="600" />
+      <br />
+      <em>Figure 3.1 – Admin Panel has system-level controls.</em>
+    </p>
   </li>
   <br />
 
   <li>
-    <strong>Customizing System Settings &amp; Brand Identity</strong><br />
-    Under <em>Admin &gt; Settings &gt; Company</em>, I replaced all default placeholders with my 
-    own organization info:
+    <strong>Creating a New Role: Supreme Admin</strong><br />
+    In <em>Agents &gt; Roles</em>, I clicked <em>+Add New Role</em> and named it <code>Supreme Admin</code>, 
+    granting full permissions (Tickets, Tasks, Knowledgebase) as a demonstration of maximum privileges.
+    <br /><br />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Create+Supreme+Admin+Role" alt="Creating new role" width="600" />
+      <br />
+      <em>Figure 3.2 – Defining permissions for Supreme Admin role.</em>
+    </p>
+  </li>
+  <br />
+
+  <li>
+    <strong>Reviewing Other Roles</strong><br />
+    osTicket comes with default roles like <em>Limited Access</em> or <em>View Only</em>. 
+    I quickly reviewed their permissions to see how they differ from the new <code>Supreme Admin</code>.
+    <br /><br />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Default+Roles" alt="Default roles in osTicket" width="600" />
+      <br />
+      <em>Figure 3.3 – Built-in roles overview.</em>
+    </p>
+  </li>
+  <br />
+
+  <li>
+    <strong>Departments Setup</strong><br />
+    Departments group agents by function (e.g., Support, Billing, SysAdmins). 
+    Under <em>Agents &gt; Departments</em>, I clicked <em>+Add New Department</em> 
+    and named one <code>Sysadmin</code>, setting its parent to <em>Top-Level</em>.
+    <br /><br />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Sysadmin+Department" alt="Adding Sysadmin dept" width="600" />
+      <br />
+      <em>Figure 3.4 – Creating Sysadmin department.</em>
+    </p>
+  </li>
+  <br />
+
+  <li>
+    <strong>Teams Setup</strong><br />
+    Teams can span multiple departments. Under <em>Agents &gt; Teams</em>, 
+    I added a new team named <code>Online Banking</code> so that agents from different departments 
+    can collaborate on banking-related tickets.
+    <br /><br />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Online+Banking+Team" alt="Team creation" width="600" />
+      <br />
+      <em>Figure 3.5 – Creating the Online Banking team.</em>
+    </p>
+  </li>
+  <br />
+
+  <li>
+    <strong>Editing User Registration Settings</strong><br />
+    In <em>Admin Panel &gt; Settings &gt; Users</em>, I unchecked <em>Registration Required</em> 
+    so that unregistered users can still create tickets. This helps in scenarios where quick ticket creation 
+    is vital.
+    <br /><br />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=User+Registration+Settings" alt="User settings" width="600" />
+      <br />
+      <em>Figure 3.6 – Adjusting user registration preferences.</em>
+    </p>
+  </li>
+  <br />
+
+  <li>
+    <strong>Creating Agents</strong><br />
+    Under <em>Agents &gt; +Add New Agent</em>, I created:
     <ul>
-      <li><em>Helpdesk Name:</em> e.g., “IT Support Desk”</li>
-      <li><em>Default System Email:</em> e.g., <em>support@myorg.com</em></li>
-      <li><em>Organization Logo/Name:</em> for a polished user experience</li>
+      <li><strong>Jane Doe</strong> – Department: Sysadmin, Role: Supreme Admin, Team: Online Banking</li>
+      <li><strong>John</strong> – Department: Support, Role: View Only</li>
     </ul>
-    This ensured that tickets and emails displayed consistent branding.
-    <br /><br />
-    <img src="(SCREENSHOT #2)" alt="Company Settings" width="600" />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Add+Agents" alt="Add new agents" width="600" />
+      <br />
+      <em>Figure 3.7 – Assigning roles and departments to agents.</em>
+    </p>
   </li>
   <br />
 
   <li>
-    <strong>Configuring Email Piping &amp; Notification Settings</strong><br />
-    Next, I focused on email-related configuration in <em>Admin &gt; Emails &gt; Emails</em>. 
-    Here’s what I did:
+    <strong>Creating End Users from the Agent Panel</strong><br />
+    From the <em>Agent Panel &gt; Users &gt; +Add User</em>, I added at least one end user 
+    (e.g., Karen). End users can open tickets without needing agent-level permissions.
+    <br /><br />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Adding+End+User" alt="Add user in agent panel" width="600" />
+      <br />
+      <em>Figure 3.8 – Creating an end user for ticket submissions.</em>
+    </p>
+  </li>
+  <br />
+
+  <li>
+    <strong>Configuring SLA Plans</strong><br />
+    Under <em>Manage &gt; SLA</em>, I created:
     <ul>
-      <li>Added a support inbox <em>(support@myorg.com)</em> to handle incoming tickets</li>
-      <li>Enabled <em>SMTP</em> to ensure outgoing notifications were sent reliably</li>
-      <li>Tested these settings by sending a few test emails to confirm tickets were created</li>
+      <li><code>Sev-A</code> – 1-hour grace, 24/7 schedule</li>
+      <li><code>Sev-B</code> – 4-hour grace, 24/7</li>
+      <li><code>Sev-C</code> – 8-hour grace, M-F 8am-5pm + holidays</li>
     </ul>
-    Once I saw those test messages auto-generate tickets, I knew the system was set up correctly.
-    <br /><br />
-    <img src="(SCREENSHOT #3)" alt="Email Configuration" width="600" />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=SLA+Plans" alt="SLA plan setup" width="600" />
+      <br />
+      <em>Figure 3.9 – Adding multiple SLA Plans for different urgency levels.</em>
+    </p>
   </li>
   <br />
 
   <li>
-    <strong>Defining Departments, Teams, &amp; Agents</strong><br />
-    I wanted to reflect a real help desk structure, so under <em>Admin &gt; Agents</em> and 
-    <em>Admin &gt; Departments</em>, I created:
+    <strong>Defining Help Topics</strong><br />
+    Finally, in <em>Manage &gt; Help Topics</em>, I added:
     <ul>
-      <li>
-        <em>Departments:</em> 
-        <ul>
-          <li>IT Support</li>
-          <li>Human Resources</li>
-          <li>Customer Service</li>
-        </ul>
-      </li>
-      <li>
-        <em>Agents:</em> assigned each staff member to the relevant department, ensuring tickets 
-        route correctly.
-      </li>
-      <li>
-        <em>Teams:</em> optional groups for cross-department collaboration, if needed.
-      </li>
+      <li><code>Business Critical Outage</code> (parent: Report a Problem)</li>
+      <li><code>Personal Computer Issues</code> (parent: Report a Problem)</li>
+      <li><code>Equipment Request</code> (parent: General Inquiry)</li>
+      <li><code>Password Reset</code> (parent: Report a Problem)</li>
+      <li><code>Other</code> (parent: General Inquiry)</li>
     </ul>
-    This setup ensures that tickets land where they need to go without manual intervention.
-    <br /><br />
-    <img src="(SCREENSHOT #4)" alt="Departments & Agents Setup" width="600" />
-  </li>
-  <br />
-
-  <li>
-    <strong>Establishing SLAs &amp; Help Topics</strong><br />
-    Under <em>Admin &gt; Manage &gt; SLA Plans</em>, I set up different response-time goals—for example, 
-    “Urgent” tickets had a 1-hour response target while “Normal” had 4 hours. 
-    I also defined some <em>Help Topics</em> (<em>“Password Reset,” “Hardware Issue,” “Benefits Inquiry”</em>), 
-    so incoming tickets would be categorized automatically. 
-    This step ensures better organization and accountability.
-    <br /><br />
-    <img src="(SCREENSHOT #5)" alt="SLA and Help Topics" width="600" />
-  </li>
-  <br />
-
-  <li>
-    <strong>Email Templates &amp; Alerts</strong><br />
-    Next, I dove into <em>Admin &gt; Emails &gt; Templates</em> to tweak the default email messages 
-    sent to users and agents. For a more professional touch, I modified the wording in the “New Ticket Alert” 
-    and “Ticket Response” templates. I also checked <em>Alerts &amp; Notices</em> to confirm which 
-    email notifications were triggered for various ticket events.
-    <br /><br />
-    <img src="(SCREENSHOT #6)" alt="Email Templates" width="600" />
-  </li>
-  <br />
-
-  <li>
-    <strong>Reviewing Security &amp; Access Controls</strong><br />
-    Under <em>Admin &gt; Security Settings</em>, I confirmed that password policies (minimum length, 
-    complexity) and session timeouts were in line with best practices. I also verified that the 
-    correct permissions were set for staff roles, preventing unauthorized access to sensitive 
-    admin options or plugin management.
-    <br /><br />
-    <img src="(SCREENSHOT #7)" alt="Security Settings" width="600" />
-  </li>
-  <br />
-
-  <li>
-    <strong>Final Testing &amp; Verification</strong><br />
-    Lastly, I created a test ticket via the user portal to see the entire process in action:
-    <ul>
-      <li>A user-facing form captured the issue details</li>
-      <li>An auto-generated email notified me (as the assigned agent)</li>
-      <li>My agent response triggered another email back to the user</li>
-    </ul>
-    Everything flowed smoothly, confirming that my configurations were correct.
-    <br /><br />
-    <img src="(SCREENSHOT #8)" alt="Test Ticket and Notifications" width="600" />
+    <p align="center">
+      <img src="https://via.placeholder.com/600x350.png?text=Help+Topics" alt="Creating help topics" width="600" />
+      <br />
+      <em>Figure 3.10 – Help topics let end users categorize their issues more easily.</em>
+    </p>
   </li>
 </ol>
 
@@ -162,9 +176,9 @@
 
 <h2>Conclusion</h2>
 <p>
-  By walking through these post-install configuration steps, I ensured that 
-  my osTicket deployment wasn’t just set up, but actively customized for real-world 
-  service desk operations. From branding and email flow to user roles and security protocols, 
-  every detail I configured helps streamline support workflows and maintain a secure, 
-  efficient help desk system. 
+  By setting up roles, departments, teams, SLAs, and help topics, I prepared osTicket 
+  for a real-world help desk environment. Agents now have the correct permissions, 
+  tickets can be escalated according to SLA urgency, and end users have relevant categories 
+  to classify their requests. Next up: seeing these configurations in action with 
+  real ticket creation and resolution!
 </p>
