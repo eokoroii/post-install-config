@@ -35,7 +35,7 @@
     (system-wide settings) vs. the <em>Agent Panel</em> (daily ticket operations).
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Admin+Panel+Overview" alt="Admin Panel overview" width="600" />
+      <img src="https://i.imgur.com/2hgo65U.png" alt="Admin Panel overview" width="600" />
       <br />
       <em>Figure 3.1 – Admin Panel has system-level controls.</em>
     </p>
@@ -48,7 +48,8 @@
     granting full permissions (Tickets, Tasks, Knowledgebase) as a demonstration of maximum privileges.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Create+Supreme+Admin+Role" alt="Creating new role" width="600" />
+      <img src="https://i.imgur.com/EnQefgH.png" alt="Creating new role" width="600" />
+       <img src="https://i.imgur.com/8OYspZn.png" alt="Creating new role" width="600" />
       <br />
       <em>Figure 3.2 – Defining permissions for Supreme Admin role.</em>
     </p>
@@ -61,7 +62,7 @@
     I quickly reviewed their permissions to see how they differ from the new <code>Supreme Admin</code>.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Default+Roles" alt="Default roles in osTicket" width="600" />
+      <img src="https://i.imgur.com/wNljok1.png" alt="Default roles in osTicket" width="600" />
       <br />
       <em>Figure 3.3 – Built-in roles overview.</em>
     </p>
@@ -75,7 +76,7 @@
     and named one <code>Sysadmin</code>, setting its parent to <em>Top-Level</em>.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Sysadmin+Department" alt="Adding Sysadmin dept" width="600" />
+      <img src="https://i.imgur.com/2nBvwRS.png" alt="Adding Sysadmin dept" width="600" />
       <br />
       <em>Figure 3.4 – Creating Sysadmin department.</em>
     </p>
@@ -89,7 +90,7 @@
     can collaborate on banking-related tickets.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Online+Banking+Team" alt="Team creation" width="600" />
+      <img src="https://i.imgur.com/617RwtC.png" alt="Team creation" width="600" />
       <br />
       <em>Figure 3.5 – Creating the Online Banking team.</em>
     </p>
@@ -103,7 +104,7 @@
     is vital.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=User+Registration+Settings" alt="User settings" width="600" />
+      <img src="https://i.imgur.com/PXd8TeI.png" alt="User settings" width="600" />
       <br />
       <em>Figure 3.6 – Adjusting user registration preferences.</em>
     </p>
@@ -118,7 +119,9 @@
       <li><strong>John</strong> – Department: Support, Role: View Only</li>
     </ul>
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Add+Agents" alt="Add new agents" width="600" />
+      <img src="https://i.imgur.com/G6IObGI.png" alt="Add new agents" width="600" />
+      <img src="https://i.imgur.com/dax1fSw.png" alt="Add new agents" width="600" />
+      <img src="https://i.imgur.com/Xl1pijG.png" alt="Add new agents" width="600" />
       <br />
       <em>Figure 3.7 – Assigning roles and departments to agents.</em>
     </p>
@@ -127,11 +130,12 @@
 
   <li>
     <strong>Creating End Users from the Agent Panel</strong><br />
-    From the <em>Agent Panel &gt; Users &gt; +Add User</em>, I added at least one end user 
-    (e.g., Karen). End users can open tickets without needing agent-level permissions.
+    From the <em>Agent Panel &gt; Users &gt; +Add User</em>, I added at least two end users 
+    (Ken & Karen). End users can open tickets without needing agent-level permissions.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Adding+End+User" alt="Add user in agent panel" width="600" />
+      <img src="https://i.imgur.com/bJX4peP.png" alt="Add user in agent panel" width="600" />
+      <img src="https://i.imgur.com/1KxQFX0.png" alt="Add user in agent panel" width="600" />
       <br />
       <em>Figure 3.8 – Creating an end user for ticket submissions.</em>
     </p>
@@ -147,7 +151,8 @@
       <li><code>Sev-C</code> – 8-hour grace, M-F 8am-5pm + holidays</li>
     </ul>
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=SLA+Plans" alt="SLA plan setup" width="600" />
+      <img src="https://i.imgur.com/AOgKZab.png" alt="SLA plan setup" width="600" />
+      <img src="https://i.imgur.com/4zGqVc4.png" alt="SLA plan setup" width="600" />
       <br />
       <em>Figure 3.9 – Adding multiple SLA Plans for different urgency levels.</em>
     </p>
@@ -165,7 +170,8 @@
       <li><code>Other</code> (parent: General Inquiry)</li>
     </ul>
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Help+Topics" alt="Creating help topics" width="600" />
+      <img src="https://i.imgur.com/u9B3gSl.png" alt="Creating help topics" width="600" />
+      <img src="https://i.imgur.com/iV5ZbKz.png" alt="Creating help topics" width="600" />
       <br />
       <em>Figure 3.10 – Help topics let end users categorize their issues more easily.</em>
     </p>
